@@ -73,7 +73,7 @@
   grid-area: right;
   display: flex;
   flex-wrap: wrap;
-  padding: 15px;
+  padding: 2vw;
   overflow: auto;
 }
 .header + .rightside {
@@ -133,6 +133,7 @@
   .header {
     width: 85vw;
   }
+
   .rightside {
     width: 90vw;
   }
@@ -150,5 +151,14 @@
   }
   .gridview {
     margin-left: 1vw;
+  }
+  p {
+    font-size: 2vw;
+  }
+  input {
+    font-size: 2vw;
+  }
+  .header-search {
+    padding: 1vw;
   }
 }

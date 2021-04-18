@@ -31,8 +31,8 @@ function Header({ setGridView, color }) {
         <AppsIcon
           ref={gridRef}
           style={{
-            marginRight: "15px",
-            fontSize: "30px",
+            marginRight: "1vw",
+            fontSize: "2vw",
             padding: "5px",
             backgroundColor: color,
             borderRadius: "10px",
@@ -42,8 +42,8 @@ function Header({ setGridView, color }) {
         <ViewListIcon
           ref={listRef}
           style={{
-            marginRight: "15px",
-            fontSize: "30px",
+            marginRight: "1vw",
+            fontSize: "2vw",
             padding: "5px",
             borderRadius: "10px",
           }}
