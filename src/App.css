@@ -77,7 +77,7 @@
   overflow: auto;
 }
 .header + .rightside {
-  padding-top: 14vh;
+  padding-top: 100px;
 }
 
 .gridview {
