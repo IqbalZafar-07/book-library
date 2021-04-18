@@ -12,7 +12,7 @@ function ListView() {
       </div>
 
       {array.map((data) => (
-        <div className="listview-item">
+        <div className="listview-item" key={data.id}>
           <div style={{ display: "flex", width: "40%" }}>
             <img src={`./images/${data.src}`} />
             <div

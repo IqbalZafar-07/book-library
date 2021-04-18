@@ -20,7 +20,7 @@
   overflow: inherit;
   z-index: 1000;
   grid-area: header;
-  width: 76vw;
+  width: 75vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -73,7 +73,7 @@
   grid-area: right;
   display: flex;
   flex-wrap: wrap;
-  padding: 2vw;
+  padding: 15px;
   overflow: auto;
 }
 .header + .rightside {
@@ -126,16 +126,32 @@
   background-color: black;
 }
 
+.left-toggle-icon {
+  display: none;
+}
+
 @media screen and (max-width: 625px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+  }
+  .left-toggle-icon {
+    width: 85vw;
+    display: block;
+    text-align: right;
+  }
   .leftside {
     display: none;
   }
   .header {
-    width: 85vw;
+    width: 80vw;
+    padding-top: 1px;
+    margin-top: -1px;
   }
 
   .rightside {
-    width: 90vw;
+    width: 100vw;
+    padding-left: 5vw;
   }
   h3 {
     font-size: 3vw;
@@ -155,10 +171,19 @@
   p {
     font-size: 2vw;
   }
+  .listview-item div {
+    font-size: 2vw;
+  }
   input {
     font-size: 2vw;
   }
   .header-search {
     padding: 1vw;
+  }
+  .header-search-mobile {
+    display: block;
+  }
+  .header + .rightside {
+    padding-top: 10vh;
   }
 }

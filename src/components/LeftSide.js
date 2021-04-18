@@ -9,66 +9,78 @@ import array from "./MockData";
 
 function LeftSide({ toggleClassName, lightTheme, setTheme, color }) {
   return (
-    <div className="leftside" style={{ borderRight: `1px solid ${color}` }}>
-      <h3>Library</h3>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          width: "18vw",
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <LibraryBooksIcon />
-          <p style={{ flex: "1", marginLeft: "5px" }}>My Books</p>
-          <p
-            style={{
-              backgroundColor: color,
-              borderRadius: "10px",
-              padding: "1px 10px 5px 10px",
-            }}
-          >
-            {array.length}
-          </p>
+    <>
+      <div className="leftside" style={{ borderRight: `1px solid ${color}` }}>
+        <h3>Library</h3>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            width: "18vw",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <LibraryBooksIcon />
+            <p style={{ flex: "1", marginLeft: "5px" }}>My Books</p>
+            <p
+              style={{
+                backgroundColor: color,
+                borderRadius: "10px",
+                padding: "1px 10px 5px 10px",
+              }}
+            >
+              {array.length}
+            </p>
+          </div>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <AddCircleOutlineIcon />
+            <p style={{ marginLeft: "5px" }}>Add New Books</p>
+          </div>
         </div>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <AddCircleOutlineIcon />
-          <p style={{ marginLeft: "5px" }}>Add New Books</p>
-        </div>
-      </div>
-      <br />
-      <br />
+        <br />
+        <br />
 
-      <h3>Setting</h3>
+        <h3>Setting</h3>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            width: "18vw",
+            justifyContent: "space-between",
+          }}
+        >
+          <TonalityIcon />
+          <p>Dark Mode</p>
+          {lightTheme ? (
+            <ToggleOffIcon
+              style={{ fontSize: "40px" }}
+              onClick={() => {
+                toggleClassName();
+                setTheme(false);
+              }}
+            />
+          ) : (
+            <ToggleOnIcon
+              style={{ fontSize: "40px", color: "blue" }}
+              onClick={() => {
+                setTheme(true);
+                toggleClassName();
+              }}
+            />
+          )}
+        </div>
+      </div>
       <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          width: "18vw",
-          justifyContent: "space-between",
+        className="left-toggle-icon"
+        onClick={() => {
+          if (lightTheme) setTheme(false);
+          else setTheme(true);
+          toggleClassName();
         }}
       >
-        <TonalityIcon className="left-toggle-icon" />
-        <p>Dark Mode</p>
-        {lightTheme ? (
-          <ToggleOffIcon
-            style={{ fontSize: "40px" }}
-            onClick={() => {
-              toggleClassName();
-              setTheme(false);
-            }}
-          />
-        ) : (
-          <ToggleOnIcon
-            style={{ fontSize: "40px", color: "blue" }}
-            onClick={() => {
-              setTheme(true);
-              toggleClassName();
-            }}
-          />
-        )}
+        <TonalityIcon />
       </div>
-    </div>
+    </>
   );
 }
 
