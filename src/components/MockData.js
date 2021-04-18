@@ -1,12 +1,12 @@
 const array = [
   {
-    id: "1",
-    title: "My Dark Vanessa",
-    author: "Kate Elizabeth Russell",
-    genre: "Drama",
-    progress: "66",
-    last_opened: "6 Month Ago",
-    src: "/img5.jpg",
+    "id": "1",
+    "title": "My Dark Vanessa",
+    "author": "Kate Elizabeth Russell",
+    "genre": "Drama",
+    "progress": "66",
+    "last_opened": "6 Month Ago",
+    "src": "/img5.jpg",
   },
   {
     id: "2",

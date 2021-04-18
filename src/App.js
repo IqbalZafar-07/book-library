@@ -3,12 +3,28 @@ import Header from "./components/Header";
 import LeftSide from "./components/LeftSide";
 import RightSide from "./components/RightSide";
 import { useState, useEffect } from "react";
+import array from "./components/MockData";
+import React from "react";
+import FetchData from "./components/FetchData";
+
+export const UserContext = React.createContext();
 
 function App() {
   const [addClass, setClass] = useState("");
   const [lightTheme, setTheme] = useState(true);
   const [gridView, setGridView] = useState(true);
   const [color, setColor] = useState("lightgrey");
+  const [filteredArray, setFilteredArray] = useState(array);
+
+  const filter = (value) => {
+    setFilteredArray(
+      array.filter(
+        (ele) =>
+          ele.title.toLowerCase().includes(value.toLowerCase()) ||
+          ele.author.toLowerCase().includes(value.toLowerCase())
+      )
+    );
+  };
 
   useEffect(() => {
     if (lightTheme) {
@@ -17,21 +33,6 @@ function App() {
       setColor("#242222");
     }
   }, [lightTheme]);
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     let res = await fetch(
-  //       "https://mocki.io/v1/69d3c03d-86b3-4000-9228-a34a3fefcc31"
-  //     );
-  //     let data = await res.json();
-  //     console.log(data);
-  //   }
-  //   // fetch("https://mocki.io/v1/69d3c03d-86b3-4000-9228-a34a3fefcc31")
-  //   //   .then((res) => res.json())
-  //   //   .then((ans) => {
-  //   //     console.log(ans);
-  //   //   });
-  //   fetchData();
-  // }, []);
 
   const toggleClassName = () => {
     if (addClass) {
@@ -50,9 +51,12 @@ function App() {
         color={color}
       />
       <div className="app-div">
-        <Header gridView={gridView} setGridView={setGridView} color={color} />
-        <RightSide gridView={gridView} color={color} />
+        <Header setGridView={setGridView} color={color} filter={filter} />
+        <UserContext.Provider value={filteredArray}>
+          <RightSide gridView={gridView} color={color} />
+        </UserContext.Provider>
       </div>
+      {/* <FetchData /> */}
     </div>
   );
 }

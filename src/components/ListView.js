@@ -1,7 +1,8 @@
-import React from "react";
-import array from "./MockData";
+import React, { useContext } from "react";
+import { UserContext } from "../App";
 
 function ListView() {
+  const filteredArray = useContext(UserContext);
   return (
     <div className="listview">
       <div className="listview-item">
@@ -11,7 +12,7 @@ function ListView() {
         <div style={{ width: "20%", color: "gray" }}>Last Opened</div>
       </div>
 
-      {array.map((data) => (
+      {filteredArray.map((data) => (
         <div className="listview-item" key={data.id}>
           <div style={{ display: "flex", width: "40%" }}>
             <img src={`./images/${data.src}`} />
