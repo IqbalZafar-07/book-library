@@ -20,3 +20,6 @@ user try to toggle between views
     3. user can filter books using input box present at the top and to work this component          efficiently I have used the concept of Debouncing.
 
     4. It is mobile responsive to do so I have use @media querry of css which will apply on device having width less than 625px
+
+--> I have used Inline styling Intentionaly on those element which is either static or its style
+    depends upon theme toggle and for rest of the element I have styled it in App.css
