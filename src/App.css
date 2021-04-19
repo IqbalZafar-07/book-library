@@ -81,6 +81,7 @@
 }
 
 .gridview {
+  cursor: pointer;
   margin: 10px;
   position: relative;
 }
@@ -133,8 +134,7 @@
 .listview-item {
   display: flex;
   padding: 10px;
-  /* justify-content: space-between; */
-  /* align-items: center; */
+  cursor: pointer;
 }
 
 .listview-item img {
@@ -142,10 +142,6 @@
   height: 90px;
   border-radius: 10px;
 }
-
-/* .listview-item div {
-  width: 33%;
-} */
 
 .toggle .header {
   background-color: black;

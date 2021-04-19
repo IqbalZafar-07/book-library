@@ -50,6 +50,7 @@ function Header({ setGridView, color, filter }) {
             padding: "5px",
             backgroundColor: color,
             borderRadius: "10px",
+            cursor: "pointer",
           }}
           onClick={showGrid}
         />
@@ -59,6 +60,7 @@ function Header({ setGridView, color, filter }) {
           style={{
             padding: "5px",
             borderRadius: "10px",
+            cursor: "pointer",
           }}
           onClick={showList}
         />

@@ -53,7 +53,7 @@ function LeftSide({ toggleClassName, lightTheme, setTheme, color }) {
           <p>Dark Mode</p>
           {lightTheme ? (
             <ToggleOffIcon
-              style={{ fontSize: "40px" }}
+              style={{ fontSize: "40px", cursor: "pointer" }}
               onClick={() => {
                 toggleClassName();
                 setTheme(false);
@@ -72,6 +72,7 @@ function LeftSide({ toggleClassName, lightTheme, setTheme, color }) {
       </div>
       <div
         className="left-toggle-icon"
+        style={{ cursor: "pointer" }}
         onClick={() => {
           if (lightTheme) setTheme(false);
           else setTheme(true);
