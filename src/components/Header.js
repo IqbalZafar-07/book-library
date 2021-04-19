@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import ViewListIcon from "@material-ui/icons/ViewList";
 import AppsIcon from "@material-ui/icons/Apps";
 import SearchIcon from "@material-ui/icons/Search";
+import { useEffect } from "react";
 
 function Header({ setGridView, color, filter }) {
   const gridRef = useRef(null);
@@ -20,9 +21,18 @@ function Header({ setGridView, color, filter }) {
     listRef.current.style.backgroundColor = color;
   };
 
-  //   useEffect(() => {
+  //Debouncing concept for efficient search
+  useEffect(() => {
+    let timer;
+    timer = setTimeout(() => {
+      filter(input);
+      //   console.log("count");
+    }, 300);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [input]);
 
-  //   }, [])
   return (
     <div className="header" style={{ borderBottom: `1px solid ${color}` }}>
       <h1
@@ -61,7 +71,7 @@ function Header({ setGridView, color, filter }) {
           value={input}
           onChange={(e) => {
             setInput(e.target.value);
-            filter(e.target.value);
+            // filter(e.target.value);
           }}
         />
       </div>

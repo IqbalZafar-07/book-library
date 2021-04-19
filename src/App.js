@@ -26,6 +26,14 @@ function App() {
     );
   };
 
+  // const debouncing = (fn, delay)=>{
+  //   let timer;
+  //   return function () {
+  //     clearTimeout(timer)
+  //     timer
+  //   }
+  // }
+
   useEffect(() => {
     if (lightTheme) {
       setColor("lightgrey");
